@@ -2,8 +2,79 @@
 <html>
 <head>
 	<title>Sandwich Maker</title>
+	<link rel="stylesheet" type="text/css" href="Main.css">
 </head>
+
 <body>
+	<h2> Delicious Sandwich </h2>
+	<div id = "container" >
+
+		<form id= "breadForm" class="form">
+			<legend> Bread </legend>
+			<select id = "bread" multiple="multiple">
+			  	<option value="Italian"> Italian </option>
+			  	<option value="Flatbread"> Flatbread </option>
+			  	<option value="Rye Bread"> Rye Bread </option>
+			  	<option value="Multi-Grain Flatbread">Multi-Grain Flatbread</option>
+			  	<option value="Italian Herbs & Cheese">Italian Herbs Cheese</option>
+			</select>
+		</form>
+
+		<form id= "meatForm" class="form">
+			<legend> Meat </legend>	
+			<select id = "meat" multiple="multiple">
+			  	<option value="turky"> Turky </option>
+			  	<option value="chicken"> Chicken </option>
+			  	<option value="Ham"> Ham </option>
+			  	<option value="Beef"> Beef </option>
+			  	<option value="bacon"> Bacon</option>
+			  	<option value="no meat"> No Meat </option>
+			</select>
+		</form>
+
+		<form id= "cheeseForm" class="form">
+			<legend> Cheese </legend>
+			<select id = "cheese" multiple="multiple">
+			  	<option value="Pepper Jack"> Pepper Jack </option>
+			  	<option value="Provolone"> Provolone </option>
+			  	<option value="Shredded Mozzarella"> Shredded Mozzarella </option>
+			  	<option value="White American"> White American </option>
+			  	<option value="Monterey Cheddar"> Monterey Cheddar </option>
+			  	<option value="no cheese"> No Cheese </option>
+			</select>
+		</form>
+
+		<form id= "condimentsForm" class="form">
+			<legend> Condiments </legend>
+			<select id = "condiments" multiple="multiple">
+			  	<option value="Salt"> Salt </option>
+			  	<option value="Pepper"> Pepper </option>
+			  	<option value="Oregano"> Oregano </option>
+			  	<option value="Grated Parmesan Cheese"> Grated Parmesan Cheese </option>
+			  	<option value="vinger"> Vinger </option>
+			  	<option value="No Condiments"> No Condiments </option>
+			</select>
+		</form>
+
+		<form id= "veggiesForm" class="form">
+			<legend> Veggies </legend>
+			<select id = "veggies" multiple="multiple">
+			  	<option value="Lettuce"> Lettuce </option>
+			  	<option value="Spinach"> Spinach </option>
+			  	<option value="Tomatoes"> Tomatoes </option>
+			  	<option value="Cucumbers"> Cucumbers </option>
+			  	<option value="Green Peppers"> Green Peppers </option>
+			  	<option value="no veggies"> No Veggies </option>
+			</select>
+		</form>
+	</div>
+	<div id=" orderDetails">
+		
+	</div>
+
+	
+
+	<footer > Copyright Sany 2017</footer>
 
 <script type="text/javascript" src = "javascripts/SandwichMaker" ></script>
 </body>
