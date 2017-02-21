@@ -2,13 +2,22 @@
 var SandwichMaker = (function(maker) {
 
   // Private variable to store the different meat prices
-  var meatPrices;
+  // meatPrices is object and cheicken is key and 1.5 is value.
+  var meatPrices ={"turky": 0.90, "chicken": 1.50, "ham": 1.2,"beef": .75,
+  				   "bacon": 1.50 ,"meatball": 1.50, "none": 0 };
+ 
 
   // Augment the original object with another method
-  maker.addMeat = function() {
-    return ???;
-  };
+  maker.addMeat = function(meatChoice){
+    return meatPrices[meatChoice];
+  }
 
   // Return the new, augmented object with the new method on it
   return maker;
-})(SandwichMaker);
+  // console.log(maker);
+})(SandwichMaker || {});
+
+
+
+
+
