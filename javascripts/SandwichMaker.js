@@ -11,6 +11,5 @@ var SandwichMaker = (function() {
     getTopping : function(){
     	return totalPrice
     }
-    // console.log("total Price is : " +  totalPrice );
   };
 })();
