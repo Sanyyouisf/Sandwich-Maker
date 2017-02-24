@@ -1,3 +1,5 @@
+
+// var totalPrice = 0;
 var SandwichMaker = (function() {
 
   // Private variable to store the price
