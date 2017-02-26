@@ -13,6 +13,15 @@
 	font-weight: 800;
 }
 
+#toppingDetails {
+  background-color: #7fffd4;
+  color: blue;
+  font-size: 15px;
+
+}
+
+
+
 .btn {
   background: #0991eb;
   background-image: -webkit-linear-gradient(top, #0991eb, #3b4a54);

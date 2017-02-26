@@ -6,16 +6,14 @@ var SandwichMaker = (function(maker) {
   var meatPrices ={"turky": 1.90, "chicken": 1.50, "ham": 1.2,"beef": .75,
   				   "bacon": 1.50 ,"meatball": 1.50, "none": 0 };
  
-
   // Augment the original object with another method
   maker.addMeat = function(meatChoice){
-    return meatPrices[meatChoice];
+    return meatPrices[meatChoice];// []return the value of the key 
   }
-
   // Return the new, augmented object with the new method on it
   return maker;
   // console.log(maker);
-})(SandwichMaker || {});
+})(SandwichMaker || {}); // || {}if the iffe function SandwichMaker dosn't exist dont fail. 
 
 
 

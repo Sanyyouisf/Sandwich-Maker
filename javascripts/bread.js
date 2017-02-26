@@ -10,7 +10,6 @@ var SandwichMaker = (function(maker) {
   maker.addBread = function(breadChoice){
     return breadPrices[breadChoice];
   }
-
   // Return the new, augmented object with the new method on it
   return maker;
   // console.log(maker);
