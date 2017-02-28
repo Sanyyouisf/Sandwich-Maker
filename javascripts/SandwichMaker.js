@@ -18,11 +18,11 @@ var SandwichMaker = (function() {
     },
     resetPrice : function(){
        totalPrice = 0 ;
+    },
+    deleteTopping : function(toppingPrice){
+      totalPrice -= toppingPrice;
+      // SandwichMaker.getTopping();
+      console.log("deleteTopping is executing");
     }
-    // deleteTopping : function(toppingPrice){
-    //   totalPrice -= toppingPrice;
-    //   // SandwichMaker.getTopping();
-    //   console.log("deleteTopping is executing");
-    // }
   };
 })();

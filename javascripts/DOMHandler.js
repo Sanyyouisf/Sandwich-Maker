@@ -21,30 +21,39 @@ var orderPrice = document.getElementById("orderPrice");
 */
 
 // function for adding bread
-
 	breadChooser.addEventListener("change", function(event) {
     // to check if the checkbox was checked or note 
   	if (event.target.checked === true) {
-      	// Get the value chosen from the DOM
-      	selectedTopping = event.target.value;
-      	// Determine the price of the topping chosen and console it 
-      	var toppingPrice = SandwichMaker.addBread(selectedTopping);
-      	console.log(selectedTopping , "price is : " ,toppingPrice);
-        toppingDetails.innerHTML +="<p>"+selectedTopping+"  price is : "+toppingPrice+"</p>";
-      	// Add the topping to the SandwichMaker to increase the total price
-      	SandwichMaker.addTopping(toppingPrice);
+      // Get the value chosen from the DOM
+    	selectedTopping = event.target.value;
+    	// Determine the price of the topping chosen and console it 
+    	var toppingPrice = SandwichMaker.addBread(selectedTopping);
+      console.log(selectedTopping , "price is : " ,toppingPrice);
+      toppingDetails.innerHTML +="<p>"+selectedTopping+"  price is : "+toppingPrice+"</p>";
+      // Add the topping to the SandwichMaker to increase the total price
+      SandwichMaker.addTopping(toppingPrice);
      }
+     else if (event.target.checked === false){//when uncheck the checkbox it delet the price of that topping 
+      selectedTopping = event.target.value;
+      toppingPrice = SandwichMaker.addBread(selectedTopping)
+      SandwichMaker.deleteTopping(toppingPrice);
+      }
 	});
 
 
  // function for adding meat 
 meatChooser.addEventListener("click", function(event) {
   if (event.target.checked === true) {
-  selectedTopping = event.target.value;
-  var toppingPrice = SandwichMaker.addMeat(selectedTopping)
-  console.log(selectedTopping , "price is : " , toppingPrice);
-  toppingDetails.innerHTML +="<p>"+selectedTopping+"  price is : "+toppingPrice+"</p>";
-  SandwichMaker.addTopping(toppingPrice);
+    selectedTopping = event.target.value;
+    var toppingPrice = SandwichMaker.addMeat(selectedTopping)
+    console.log(selectedTopping , "price is : " , toppingPrice);
+    toppingDetails.innerHTML +="<p>"+selectedTopping+"  price is : "+toppingPrice+"</p>";
+    SandwichMaker.addTopping(toppingPrice);
+    }
+  else if (event.target.checked === false){//when uncheck the checkbox it delet the price of that topping 
+    selectedTopping = event.target.value;
+    toppingPrice = SandwichMaker.addMeat(selectedTopping)
+    SandwichMaker.deleteTopping(toppingPrice);
 }
 });
 
@@ -56,8 +65,13 @@ cheeseChooser.addEventListener("change", function(event){
     var toppingPrice = SandwichMaker.addCheese(selectedTopping)
     console.log (selectedTopping ,"Price is" , toppingPrice);
     toppingDetails.innerHTML +="<p>"+selectedTopping+"  price is : "+toppingPrice+"</p>";
-     SandwichMaker.addTopping(toppingPrice);
+    SandwichMaker.addTopping(toppingPrice);
    }
+   else if (event.target.checked === false){
+    selectedTopping = event.target.value;
+    toppingPrice = SandwichMaker.addCheese(selectedTopping)
+    SandwichMaker.deleteTopping(toppingPrice);
+}
 });
 
 
@@ -66,10 +80,15 @@ VeggieChooser.addEventListener("change", function(event){
   if (event.target.checked === true) {
   	selectedTopping = event.target.value;
   	var toppingPrice = SandwichMaker.addVeggie(selectedTopping);
-      console.log (selectedTopping ,"Price is" , toppingPrice);
-      toppingDetails.innerHTML +="<p>"+selectedTopping+"  price is : "+toppingPrice+"</p>";
-  	 SandwichMaker.addTopping(toppingPrice);
+    console.log (selectedTopping ,"Price is" , toppingPrice);
+    toppingDetails.innerHTML +="<p>"+selectedTopping+"  price is : "+toppingPrice+"</p>";
+  	SandwichMaker.addTopping(toppingPrice);
     }
+    else if (event.target.checked === false){
+    selectedTopping = event.target.value;
+    toppingPrice = SandwichMaker.addVeggie(selectedTopping)
+    SandwichMaker.deleteTopping(toppingPrice);
+}
 });
 
 
@@ -81,14 +100,19 @@ condimentsChooser.addEventListener("change", function(event){
     console.log(selectedTopping, " price : ", toppingPrice);
     toppingDetails.innerHTML +="<p>"+selectedTopping+"  price is : "+ toppingPrice + "</p>";
     SandwichMaker.addTopping(toppingPrice);
-  }
+    }
+  else if (event.target.checked===false){
+    selectedTopping = event.target.value;
+    toppingPrice = SandwichMaker.addCondiments(selectedTopping)
+    SandwichMaker.deleteTopping(toppingPrice);
+    }
 });
 
 
 //function exceuted when press the button to get the order details
 sandwichPrice.addEventListener("click",function(){
-	var totalPrice = (" the total of the sandwich is : " +  SandwichMaker.getTopping());
-	document.getElementById("orderPrice").innerHTML = totalPrice;
+	var totalPrice = (" the total of the sandwich is : "+SandwichMaker.getTopping());
+	document.getElementById("orderPrice").innerHTML=totalPrice;
 	console.log ("sandwich total price is " ,SandwichMaker.getTopping());
 });
 
