@@ -132,5 +132,3 @@ sandwichPrice.addEventListener("click",function(){
   });
 
 
-
-
